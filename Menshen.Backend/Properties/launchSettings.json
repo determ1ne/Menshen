@@ -24,7 +24,11 @@
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SQLITE_DB_PATH": "database.db",
+        "SQLITE_WAL_MODE": "TRUE",
+        "HTTPS_REDIRECTION": "FALSE",
+        "INIT_REVERSE_PROXY_SECRET_HEADER": "TEST_HEADER"
       }
     }
   }
