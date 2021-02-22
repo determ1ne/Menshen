@@ -26,6 +26,10 @@ namespace Menshen.Backend.Controllers
             if (!string.IsNullOrWhiteSpace(rpSecret) &&
                 string.IsNullOrWhiteSpace(HttpContext.Request.Headers[rpSecret]))
             {
+                foreach (var h in HttpContext.Request.Headers)
+                {
+                    _logger.LogInformation($"{h.Key} {h.Value}");
+                }
                 _logger.LogWarning($"Unauthorized: {HttpContext.Connection.RemoteIpAddress}");
                 return BadRequest();
             }
